@@ -15,5 +15,5 @@ create table if not exists social_media_posts (
     disarm_techniques text,
     verification_status text,
     author text,
-    notes text,
+    notes text
 );
