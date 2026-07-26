@@ -1,0 +1,26 @@
+name: Daily Airtable to Supabase Sync
+
+on:
+  schedule:
+    # 20:00 UTC, Mon-Fri — adjust the hour to match "end of day" in your timezone
+    - cron: '0 20 * * 1-5'
+  workflow_dispatch: {}  # lets you trigger it manually from the Actions tab
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install -r requirements.txt
+
+      - run: python airtable_to_supabase_sync.py
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+          AIRTABLE_TABLE_NAME: ${{ secrets.AIRTABLE_TABLE_NAME }}
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
