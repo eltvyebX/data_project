@@ -1,21 +1,2 @@
-# Andariya ETL Pipeline Dependencies
-# Python 3.9+
-
-# Google Sheets API
-gspread==6.1.2
-google-auth==2.29.0
-google-auth-oauthlib==1.2.0
-google-auth-httplib2==0.2.0
-
-# Postgres
-psycopg2-binary==2.9.9
-
-# Data processing
-pandas==2.2.2
-numpy==1.26.4
-
-# Scheduling (optional - for cron-based approach)
-schedule==1.2.2
-
-# Environment management
-python-dotenv==1.0.1
+pyairtable>=2.3
+psycopg2-binary>=2.9
