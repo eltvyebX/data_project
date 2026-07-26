@@ -40,7 +40,7 @@ log = logging.getLogger("airtable_sync")
 FIELD_MAP = {
     "date": "date",
     "platform": "platform",
-    "date_collected": "date_collected",
+    "post_date": "post_date",
     "URL": "url",
     "actor": "actor",
     "behaviour": "behaviour",
@@ -54,7 +54,7 @@ FIELD_MAP = {
     "notes": "notes",
 }
 
-TABLE_NAME = "disinfo_entries"  # Postgres table name — see schema.sql
+TABLE_NAME = "social_media_posts"  # Postgres table name — see schema.sql
 
 
 def get_env(name):
