@@ -1,10 +1,10 @@
 -- Run this once in the Supabase SQL editor before the first sync.
 
-create table if not exists disinfo_entries (
+create table if not exists social_media_posts (
     airtable_record_id text primary key,
     date date,
     platform text,
-    date_collected date,
+    post_date date,
     url text,
     actor text,
     behaviour text,
@@ -16,5 +16,4 @@ create table if not exists disinfo_entries (
     verification_status text,
     author text,
     notes text,
-    synced_at timestamptz
 );
